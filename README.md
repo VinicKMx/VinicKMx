@@ -29,6 +29,7 @@ LoRa remote control on Zephyr, designed for a link that drops packets: ACK and r
 Firmware architecture, real-time systems, reliability and fault tolerance, embedded security, RTOS design, industrial protocols, Embedded Linux and Yocto, OTA update paths, hardware/software interaction.
 
 **Languages:** C, C++, Rust, Assembly  
+**Tooling:** Python, Bash  
 **Architectures / MCUs:** ARM Cortex-M, RISC-V, STM32, ESP32  
 **RTOS:** Zephyr, FreeRTOS  
 **Buses / Protocols:** SPI, I2C, UART, CAN, Modbus, MQTT, NATS
