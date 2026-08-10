@@ -25,7 +25,8 @@ Reliable LoRa remote control built on Zephyr with ACK/retry and duplicate-safe c
 Firmware architecture, real-time systems, reliability, embedded security, RTOS design, industrial protocols, Embedded Linux, Yocto, OTA update paths, and hardware/software interaction.
 
 **Languages:** C, C++, Rust, Assembly  
-**MCU / RTOS:** STM32, ESP32, Zephyr  
+**Architectures / MCUs:** ARM Cortex-M, STM32, ESP32  
+**RTOS:** Zephyr  
 **Buses / Protocols:** SPI, I2C, UART, CAN, Modbus, MQTT, NATS
 
 ## What I Look For
