@@ -20,7 +20,7 @@ I started it to answer a specific question: what architectural properties would 
 
 Bitcoin Lightning payment terminal on ESP32-S3, written in Rust. Payment flow on a device with no filesystem, no allocator to lean on, and a user waiting at the counter.
 
-### [GateLink](https://github.com/VinicKMx/GateLink)
+### [Gate Link](https://github.com/VinicKMx/gate-link)
 
 LoRa remote control on Zephyr, designed for a link that drops packets: ACK and retry, with duplicate-safe command execution so a repeated frame cannot actuate twice.
 
