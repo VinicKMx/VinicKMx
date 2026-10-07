@@ -1,41 +1,44 @@
-# Vinicius - Embedded & Systems Engineer
+# Vinicius Pedrosa
 
-Reliable embedded systems, real-time software, and low-level tooling.
+**Embedded Linux / Kernel Engineer**
 
-**Rust, C, Zephyr, RTOS, ARM Cortex-M, ESP32**
+Low-level embedded systems in C, C++ and Rust: Linux platforms, RTOS firmware,
+bootloaders and hardware bring-up.
 
-My work sits across the embedded stack: registers and interrupts at one end, deployment and field behaviour at the other. I care about systems whose behaviour is established before they run and inspectable when they fail: static over dynamic, checked at build time over caught at runtime, observable over merely correct.
+## Current focus
 
-That costs flexibility, and there are problems where it is the wrong call. I aim it at systems that have to keep running unattended.
+- Linux kernel upstream work and mainline bring-up of the **Radxa Cubie A7Z (Allwinner A733, ARM64)**.
+- Serial/UART drivers, Device Tree bindings, termios and clock debugging on real hardware.
+- Embedded Linux platforms with Yocto / OpenEmbedded, alongside Zephyr RTOS firmware.
 
-## Featured Work
+## Linux kernel upstream work
 
-### [Malleus RTOS](https://github.com/VinicKMx/malleus-rtos) - early, in active development
+I contribute as **Vinicius Pedrosa** on the Linux mailing lists. My current
+`8250_dw` / DesignWare APB UART patch series is under review.
 
-Rust-native RTOS built around constraints rather than features: hard real-time scheduling, MPU fault isolation, static task sets, no dynamic allocation, and timing analysis at build time.
+- [Allwinner A733 UART support — patch series](https://lkml.iu.edu/2610.0/09102.html): UART driver and Device Tree binding changes, with Cubie A7Z console and termios testing.
+- [BUSY-safe divisor programming](https://lkml.iu.edu/2610.0/09157.html): investigation of DLF detection, divisor hooks and lost UART interrupts.
+- [DLF autodetection — review discussion and board tests](https://lkml.iu.edu/2610.0/10403.html): distinguishing the A733 RS485 register from a real DLF register.
+- [A733 CCU — reboot and power-off validation](https://lkml.iu.edu/2610.0/09219.html): hardware observations shared during linux-sunxi clock review.
 
-I started it to answer a specific question: what architectural properties would make another RTOS worth existing? That answer is still being worked out in code.
+These links document submitted work and review discussions, rather than a claim
+of merged kernel commits. Hardware validation is on the Cubie A7Z; testing on a
+UART with a real DLF register remains outstanding.
 
-### [ESP32 Lightning Terminal](https://github.com/VinicKMx/esp32-lightning-terminal)
+## Selected projects
 
-Bitcoin Lightning payment terminal on ESP32-S3, written in Rust. Payment flow on a device with no filesystem, no allocator to lean on, and a user waiting at the counter.
+- [malleus-rtos](https://github.com/VinicKMx/malleus-rtos) — Experimental Rust RTOS design for ARM Cortex-M; manifest validation and timing analysis work today, while the kernel does not yet boot on hardware.
+- [rampart-boot](https://github.com/VinicKMx/rampart-boot) — C/Rust secure firmware lifecycle work: image signing and verification tooling implemented; device boot, update and recovery flows in development.
+- [gate-link](https://github.com/VinicKMx/gate-link) — C/Zephyr LoRa remote actuator protocol with authenticated commands, ACK/retry and replay protection; validated on an ESP32 bench pair.
+- [coffee-roaster-controller-zephyr](https://github.com/VinicKMx/coffee-roaster-controller-zephyr) — STM32/Zephyr controller architecture separating temperature acquisition, heater control and safety authority; current default actuator is an LED mock.
 
-### [Gate Link](https://github.com/VinicKMx/gate-link)
+## Technical areas
 
-LoRa remote control on Zephyr, designed for a link that drops packets: ACK and retry, with duplicate-safe command execution so a repeated frame cannot actuate twice.
+- **Systems:** Linux kernel / Embedded Linux, Device Tree, drivers, bootloaders, Zephyr RTOS.
+- **Languages and hardware:** C / C++ / Rust; ARM / ARM64, STM32, ESP32.
+- **Platforms and debugging:** Yocto / OpenEmbedded, GDB, serial consoles, logic analyzer and hardware debugging.
+- **Industrial connectivity:** UART / RS-485, Modbus, MQTT and embedded networking.
 
-## Areas
+## Contact
 
-Firmware architecture, real-time systems, reliability and fault tolerance, embedded security, RTOS design, industrial protocols, Embedded Linux and Yocto, OTA update paths, hardware/software interaction.
-
-**Languages:** C, C++, Rust, Assembly  
-**Tooling:** Python, Bash  
-**Architectures / MCUs:** ARM Cortex-M, RISC-V, STM32, ESP32  
-**RTOS:** Zephyr, FreeRTOS  
-**Buses / Protocols:** SPI, I2C, UART, CAN, Modbus, MQTT, NATS
-
-## What I Look For
-
-Problems where understanding the whole system is the only way through: where stopping at the abstraction boundary still leaves you with the wrong answer.
-
-Open to conversations about embedded Rust, real-time design, firmware security, and anything low-level enough to require reading the reference manual.
+[LinkedIn](https://www.linkedin.com/in/vinicius-eduardo-alves-pedrosa/) · [GitHub](https://github.com/VinicKMx)
